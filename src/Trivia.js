@@ -5,7 +5,6 @@ export default class Trivia extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            name: 'test',
             hasErrors: false,
             data: {}
         }
@@ -28,8 +27,7 @@ export default class Trivia extends Component {
         return (
             <div className='triviaContainer'>
                 <h1>The following city is the capital of what country?</h1>
-                <h2>{this.data}</h2>
-                <h3>{this.name}</h3>
+                <h2>{this.state.data}</h2>
             </div>
         )
     }
