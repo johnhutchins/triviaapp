@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './Trivia.css'
 
 export default class Trivia extends Component {
@@ -10,9 +9,16 @@ export default class Trivia extends Component {
 
     //this should be on click. for now componentDidMount hook is fine
     componentDidMount() {
-        fetch('https://jwhrandomcountry.herokuapp.com/country')
+        fetch('https://jwhrandomcountry.herokuapp.com/country', {
+            method: 'GET',
+            mode: 'cors',
+            headers: {
+                'Access-Control-Allow-Origin': '*'
+            }
+        })
             .then(res => res.json())
             .then(res => this.setState({ data: res }))
+        console.log("data = " + this.data)
     }
 
     render() {
