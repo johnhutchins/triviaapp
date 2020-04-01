@@ -22,7 +22,6 @@ export default class Trivia extends Component {
             }
         })
             .then(res => res.json())
-            // .then(res => console.log(res.country))
             .then(res => this.setState({
                 country: res.country,
                 capital: res.city,
@@ -30,11 +29,12 @@ export default class Trivia extends Component {
             }))
     }
 
-    shuffle(arr) {
-        arr.sort(() => Math.random() - 0.5)
+    shuffle() {
+        return this.state.allCountries = this.state.allCountries.sort(() => Math.random() - 0.5)
     }
 
     render() {
+        this.shuffle()
         return (
             <div className='triviaContainer'>
                 <h1>The following city is the capital of what country?</h1>

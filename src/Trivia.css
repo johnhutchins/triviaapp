@@ -1,3 +1,7 @@
 .triviaContainer{
     text-align: center;
 }
+
+.triviaContainer li {
+    list-style-type: none;
+}
