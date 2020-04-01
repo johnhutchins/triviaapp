@@ -6,13 +6,15 @@ export default class Trivia extends Component {
         super(props)
         this.state = {
             hasErrors: false,
-            data: {}
+            country: '',
+            capital: '',
+            allCountries: []
         }
     }
 
     //this should be on click. for now componentDidMount hook is fine
-    async componentDidMount() {
-        await fetch('https://jwhrandomcountry.herokuapp.com/country', {
+    componentDidMount() {
+        fetch('https://jwhrandomcountry.herokuapp.com/country', {
             method: 'GET',
             mode: 'cors',
             headers: {
@@ -20,15 +22,29 @@ export default class Trivia extends Component {
             }
         })
             .then(res => res.json())
-            .then(res => this.setState({ data: res }))
-            .then(console.log('data = ' + JSON.stringify(this.state.data)))
+            // .then(res => console.log(res.country))
+            .then(res => this.setState({
+                country: res.country,
+                capital: res.city,
+                allCountries: res.allCountries.countries
+            }))
+    }
+
+    shuffle(arr) {
+        arr.sort(() => Math.random() - 0.5)
     }
 
     render() {
         return (
             <div className='triviaContainer'>
                 <h1>The following city is the capital of what country?</h1>
-                {/* <h2>{this.state.data}</h2> */}
+                <h2>{this.state.capital}</h2>
+
+                <ul>
+                    {this.state.allCountries.map((country) => (
+                        <li key={country}>{country}</li>
+                    ))}
+                </ul>
             </div>
         )
     }
