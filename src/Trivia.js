@@ -11,8 +11,8 @@ export default class Trivia extends Component {
     }
 
     //this should be on click. for now componentDidMount hook is fine
-    componentDidMount() {
-        fetch('https://jwhrandomcountry.herokuapp.com/country', {
+    async componentDidMount() {
+        await fetch('https://jwhrandomcountry.herokuapp.com/country', {
             method: 'GET',
             mode: 'cors',
             headers: {
@@ -21,13 +21,14 @@ export default class Trivia extends Component {
         })
             .then(res => res.json())
             .then(res => this.setState({ data: res }))
+            .then(console.log('data = ' + JSON.stringify(this.state.data)))
     }
 
     render() {
         return (
             <div className='triviaContainer'>
                 <h1>The following city is the capital of what country?</h1>
-                <h2>{this.state.data}</h2>
+                {/* <h2>{this.state.data}</h2> */}
             </div>
         )
     }
