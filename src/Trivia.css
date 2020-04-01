@@ -2,6 +2,10 @@
     text-align: center;
 }
 
+.triviaContainer ul {
+    padding: 0;
+}
+
 .triviaContainer li {
     list-style-type: none;
 }
