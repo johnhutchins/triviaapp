@@ -10,7 +10,7 @@ export default class App extends Component {
     }
   }
 
-  callbackFunction = (child) => {
+  callbackFunction = () => {
     let scr = (this.state.score += 1)
     this.setState({
       score: scr

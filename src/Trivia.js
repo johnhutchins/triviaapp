@@ -12,8 +12,7 @@ export default class Trivia extends Component {
         }
     }
 
-    //this should be on click. for now componentDidMount hook is fine
-    componentDidMount() {
+    getData = () => {
         fetch('https://jwhrandomcountry.herokuapp.com/country', {
             method: 'GET',
             mode: 'cors',
@@ -28,6 +27,10 @@ export default class Trivia extends Component {
                 capital: res.city,
                 allCountries: res.allCountries.countries
             }))
+    }
+
+    componentDidMount() {
+        this.getData()
         this.shuffle()
     }
 
@@ -39,15 +42,13 @@ export default class Trivia extends Component {
         if (event.currentTarget.textContent === this.state.country) {
             console.log('correct!')
             this.sendData()
-        } else {
-            //refresh page
         }
+        this.setState(this.state)
     }
 
     sendData = () => {
         this.props.parentCallback(this.state.country)
     }
-
 
     render() {
         return (
