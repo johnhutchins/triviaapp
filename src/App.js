@@ -1,11 +1,20 @@
-import React from 'react'
+import React, { Component } from 'react'
 import Trivia from './Trivia'
 import './App.css';
 
-function App() {
-  return (
-    <Trivia />
-  );
+export default class App extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      score: 0
+    }
+  }
+  render() {
+    return (
+      <div>
+        <p>{this.state.score}</p>
+        <Trivia />
+      </div>
+    )
+  }
 }
-
-export default App;
