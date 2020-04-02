@@ -9,11 +9,23 @@ export default class App extends Component {
       score: 0
     }
   }
+
+  callbackFunction = (child) => {
+    console.log('child = ' + child)
+    let scr = (this.state.score)
+    //if correct, scr += 1
+    //this.setState({
+    //   score:
+    // })
+  }
+
+  //if correct answer, +1
+
   render() {
     return (
       <div>
         <p>{this.state.score}</p>
-        <Trivia />
+        <Trivia parentCallback={this.callbackFunction} />
       </div>
     )
   }
