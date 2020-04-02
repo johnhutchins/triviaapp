@@ -5,7 +5,7 @@ export default class Trivia extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            correct: false,
+            correct: null,
             country: '',
             capital: '',
             allCountries: []
@@ -28,6 +28,7 @@ export default class Trivia extends Component {
                 capital: res.city,
                 allCountries: res.allCountries.countries
             }))
+        this.shuffle()
     }
 
     shuffle = () => {
@@ -35,21 +36,20 @@ export default class Trivia extends Component {
     }
 
     handleGuess = (event) => {
-        if (event.currentTarget.textContent == this.state.country) {
+        if (event.currentTarget.textContent === this.state.country) {
+            console.log('correct!')
             this.sendData()
-            // this.setState({
-            //     correct: true
-            // })
+        } else {
+            //refresh page
         }
     }
 
     sendData = () => {
-        this.props.parentCallback(this.state.correct)
+        this.props.parentCallback(this.state.country)
     }
 
 
     render() {
-        this.shuffle()
         return (
             <div className='triviaContainer'>
                 <h1>The following city is the capital of what country?</h1>

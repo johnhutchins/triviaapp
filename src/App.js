@@ -11,15 +11,12 @@ export default class App extends Component {
   }
 
   callbackFunction = (child) => {
-    console.log('child = ' + child)
-    let scr = (this.state.score)
-    //if correct, scr += 1
-    //this.setState({
-    //   score:
-    // })
+    let scr = (this.state.score += 1)
+    this.setState({
+      score: scr
+    })
   }
 
-  //if correct answer, +1
 
   render() {
     return (
