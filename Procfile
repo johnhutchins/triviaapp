@@ -1,1 +1,1 @@
-web: node capitaltrivia/build/index.html
+web: node ./build/index.html
