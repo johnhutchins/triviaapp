@@ -53,7 +53,7 @@ export default class Trivia extends Component {
             console.log("INCORRECT")
             this.getData()
         }
-        //this.shuffle()
+        console.log('all the data.... ' + JSON.stringify(this.state))
     }
 
     sendData = () => {
