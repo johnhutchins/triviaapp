@@ -42,15 +42,21 @@ export default class Trivia extends Component {
         if (event.currentTarget.textContent === this.state.country) {
             console.log('correct!')
             this.sendData()
+            this.getData()
+        } else {
+            console.log("INCORRECT")
+            this.getData()
         }
-        this.setState(this.state)
+        //this.shuffle()
     }
 
     sendData = () => {
         this.props.parentCallback(this.state.country)
+        //this.shuffle()
     }
 
     render() {
+        this.shuffle()
         return (
             <div className='triviaContainer'>
                 <h1>The following city is the capital of what country?</h1>
