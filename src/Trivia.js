@@ -30,6 +30,12 @@ export default class Trivia extends Component {
     }
 
     componentDidMount() {
+        this.setState({
+            correct: false,
+            country: '',
+            capital: '',
+            allCountries: []
+        })
         this.getData()
         this.shuffle()
     }
