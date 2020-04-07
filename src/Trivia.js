@@ -50,7 +50,6 @@ export default class Trivia extends Component {
             this.sendData()
             this.getData()
         } else {
-            console.log("INCORRECT")
             this.getData()
         }
         console.log('all the data.... ' + JSON.stringify(this.state))
