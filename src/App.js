@@ -29,7 +29,7 @@ export default class App extends Component {
   render() {
     return (
       <div className='app'>
-        {this.gameOver
+        {this.state.gameOver
           ? <GameOver />
           : < Trivia parentCallback={this.callbackFunction} parentCallback2={this.endGame} />
         }
