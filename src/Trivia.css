@@ -7,8 +7,15 @@
 
 button {
     background-color: #dab3ff;
+    color: #1a0033;
+    font-size: 1.5em;
     min-height: 8vh;
+    height: 15vh;
+    min-width: 8vh;
+    width: 25vh;
+    justify-content: center;
     border: 1px solid #28004d;
     border-radius: 15px;
-    margin: .25%;
+    display: flex;
+    margin: 0 auto;
 }
