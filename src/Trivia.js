@@ -6,6 +6,7 @@ export default class Trivia extends Component {
         super(props)
         this.state = {
             correct: 0,
+            gameState: [],
             country: '',
             capital: '',
             allCountries: [],
@@ -58,7 +59,7 @@ export default class Trivia extends Component {
 
     handleGuess = (event) => {
         if (this.state.counter === 50) {
-            this.sendData()
+            this.props.parentCallback2(this.state.country)
         }
 
         if (event.currentTarget.textContent === this.state.country) {
@@ -73,6 +74,9 @@ export default class Trivia extends Component {
     }
 
     sendData = () => {
+        if (this.state.counter === 50) {
+
+        }
         this.props.parentCallback(this.state.correct)
     }
 
