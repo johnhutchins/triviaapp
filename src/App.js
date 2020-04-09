@@ -22,7 +22,7 @@ export default class App extends Component {
     return (
       <div class='app'>
         <Trivia parentCallback={this.callbackFunction} />
-        <p>Your score: {this.state.score}</p>
+        <p>Your score: {this.state.score}/50</p>
       </div>
     )
   }

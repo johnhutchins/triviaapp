@@ -5,10 +5,11 @@ export default class Trivia extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            correct: null,
+            correct: 0,
             country: '',
             capital: '',
-            allCountries: []
+            allCountries: [],
+            counter: 0
         }
     }
 
@@ -22,7 +23,6 @@ export default class Trivia extends Component {
         })
             .then(res => res.json())
             .then(res => this.setState({
-                correct: false,
                 country: res.country,
                 capital: res.city,
                 allCountries: res.allCountries.countries
@@ -37,27 +37,43 @@ export default class Trivia extends Component {
             allCountries: []
         })
         this.getData()
-        this.shuffle()
+        //this.shuffle()
     }
 
     shuffle = () => {
         return this.state.allCountries = this.state.allCountries.sort(() => Math.random() - 0.5)
     }
 
+    increaseCounter = () => {
+        this.setState({
+            counter: this.state.counter + 1
+        })
+    }
+
+    increaseCorrect = () => {
+        this.setState({
+            correct: this.state.correct + 1
+        })
+    }
+
     handleGuess = (event) => {
+        if (this.state.counter === 50) {
+            this.sendData()
+        }
+
         if (event.currentTarget.textContent === this.state.country) {
-            console.log('correct!')
+            this.increaseCounter()
+            this.increaseCorrect()
             this.sendData()
             this.getData()
         } else {
+            this.increaseCounter()
             this.getData()
         }
-        console.log('all the data.... ' + JSON.stringify(this.state))
     }
 
     sendData = () => {
-        this.props.parentCallback(this.state.country)
-        //this.shuffle()
+        this.props.parentCallback(this.state.correct)
     }
 
     render() {
