@@ -2,8 +2,13 @@
     text-align: center;
     /* margin: 0 auto; */
     justify-content: center;
+    color: #f3e6ff;
 }
 
 button {
     background-color: #dab3ff;
+    min-height: 8vh;
+    border: 1px solid #28004d;
+    border-radius: 15px;
+    margin: .25%;
 }
