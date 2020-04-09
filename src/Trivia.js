@@ -10,11 +10,13 @@ export default class Trivia extends Component {
             country: '',
             capital: '',
             allCountries: [],
-            counter: 0
+            counter: 0,
+            countriesFiltered: []
         }
     }
 
     getData = () => {
+
         fetch('https://jwhrandomcountry.herokuapp.com/country', {
             method: 'GET',
             mode: 'cors',
@@ -28,6 +30,12 @@ export default class Trivia extends Component {
                 capital: res.city,
                 allCountries: res.allCountries.countries
             }))
+
+
+        let guess = res.country
+        this.setState({
+            countriesFiltered: countriesFiltered.push(guess)
+        })
     }
 
     componentDidMount() {
