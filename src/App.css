@@ -1,9 +1,12 @@
+html {
+    height: 100vh;
+}
+
 body {
     background-color: #8000ff;
 }
 
 .app {
-    min-height: 50;
     border: 1px solid white;
     border-radius: 25px 25px;
     width: 60%;
@@ -15,5 +18,4 @@ body {
 .score {
     color: white;
     text-align: center;
-    margin-top: 25%;
 }

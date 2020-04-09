@@ -3,6 +3,8 @@
     /* margin: 0 auto; */
     justify-content: center;
     color: #f3e6ff;
+    height: 20%;
+    max-height:90vh;
 }
 
 button {
