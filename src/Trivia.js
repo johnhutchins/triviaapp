@@ -90,7 +90,6 @@ export default class Trivia extends Component {
                         {country}
                     </button>
                 ))}
-
             </div>
         )
     }

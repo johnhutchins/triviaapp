@@ -33,7 +33,7 @@ export default class App extends Component {
           ? <GameOver />
           : < Trivia parentCallback={this.callbackFunction} parentCallback2={this.endGame} />
         }
-        <p>Your score: {this.state.score}/50</p>
+        <h2 className='score'>Your score: {this.state.score}/50</h2>
 
       </div>
     )

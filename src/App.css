@@ -3,7 +3,7 @@ body {
 }
 
 .app {
-    min-height: 50vh;
+    min-height: 50;
     border: 1px solid white;
     border-radius: 25px 25px;
     width: 60%;
@@ -12,6 +12,8 @@ body {
     background-color: #9933ff;
 }
 
-p {
+.score {
+    color: white;
     text-align: center;
+    margin-top: 25%;
 }
