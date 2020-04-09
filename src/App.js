@@ -11,9 +11,9 @@ export default class App extends Component {
   }
 
   callbackFunction = () => {
-    let scr = (this.state.score += 1)
+    let scr = this.state.score
     this.setState({
-      score: scr
+      score: scr + 1
     })
   }
 
@@ -21,8 +21,8 @@ export default class App extends Component {
   render() {
     return (
       <div>
-        <p>{this.state.score}</p>
         <Trivia parentCallback={this.callbackFunction} />
+        <p>Your score: {this.state.score}</p>
       </div>
     )
   }
