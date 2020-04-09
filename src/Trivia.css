@@ -1,12 +1,8 @@
 .triviaContainer{
     text-align: center;
-    margin-top: 50vh;
+    margin: 0 auto;
 }
 
-.triviaContainer ul {
-    padding: 0;
-}
-
-.triviaContainer li {
-    list-style-type: none;
+button {
+    background-color: lightskyblue;
 }

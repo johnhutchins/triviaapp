@@ -1,4 +1,11 @@
-p {
+.app {
+    border: 1px solid black;
+    border-radius: 25px 25px;
+    width: 80%;
     margin: 0 auto;
+    justify-content: center;
+}
+
+p {
     text-align: center;
 }

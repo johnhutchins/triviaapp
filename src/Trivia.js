@@ -65,13 +65,12 @@ export default class Trivia extends Component {
         return (
             <div className='triviaContainer'>
                 <h1><strong>{this.state.capital}</strong> is the capital of what country?</h1>
-                <ul>
-                    {this.state.allCountries.map((country) => (
-                        <li key={country} onClick={this.handleGuess}>
-                            {country}
-                        </li>
-                    ))}
-                </ul>
+                {this.state.allCountries.map((country) => (
+                    <button key={country} onClick={this.handleGuess}>
+                        {country}
+                    </button>
+                ))}
+
             </div>
         )
     }

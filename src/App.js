@@ -20,7 +20,7 @@ export default class App extends Component {
 
   render() {
     return (
-      <div>
+      <div class='app'>
         <Trivia parentCallback={this.callbackFunction} />
         <p>Your score: {this.state.score}</p>
       </div>
