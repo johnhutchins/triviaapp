@@ -84,7 +84,7 @@ export default class Trivia extends Component {
         this.shuffle()
         return (
             <div className='triviaContainer'>
-                <h1><strong>{this.state.capital}</strong> is the capital of what country?</h1>
+                <h1><strong><em>{this.state.capital}</em></strong></h1><h2>is the capital of what country?</h2>
                 {this.state.allCountries.map((country) => (
                     <button key={country} onClick={this.handleGuess}>
                         {country}

@@ -1,9 +1,15 @@
+body {
+    background-color: #8000ff;
+}
+
 .app {
-    border: 1px solid black;
+    min-height: 50vh;
+    border: 1px solid white;
     border-radius: 25px 25px;
     width: 60%;
     margin: 0 auto;
     justify-content: center;
+    background-color: #9933ff;
 }
 
 p {

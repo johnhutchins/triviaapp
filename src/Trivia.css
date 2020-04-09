@@ -1,8 +1,9 @@
 .triviaContainer{
     text-align: center;
-    margin: 0 auto;
+    /* margin: 0 auto; */
+    justify-content: center;
 }
 
 button {
-    background-color: lightskyblue;
+    background-color: #dab3ff;
 }
