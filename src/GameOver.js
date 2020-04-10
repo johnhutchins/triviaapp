@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Trivia from './Trivia'
-import './App.css';
+import './App.css'
+import './GameOver.css'
 
 export default class GameOver extends Component {
     constructor(props) {
@@ -13,9 +14,8 @@ export default class GameOver extends Component {
 
     render() {
         return (
-            <div>
+            <div h1 className='center'>
                 <h1>GAME OVER</h1>
-                <h3>You scored: </h3>
             </div>
         )
     }

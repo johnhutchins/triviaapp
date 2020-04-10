@@ -31,11 +31,10 @@ export default class Trivia extends Component {
                 allCountries: res.allCountries.countries
             }))
 
-
-        let guess = res.country
-        this.setState({
-            countriesFiltered: countriesFiltered.push(guess)
-        })
+        // let guess = res.country
+        // this.setState({
+        //     countriesFiltered: countriesFiltered.push(guess)
+        // })
     }
 
     componentDidMount() {
