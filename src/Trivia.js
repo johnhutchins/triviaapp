@@ -15,6 +15,9 @@ export default class Trivia extends Component {
         }
     }
 
+    
+
+
     getData = () => {
 
         fetch('https://jwhrandomcountry.herokuapp.com/country', {
@@ -25,27 +28,27 @@ export default class Trivia extends Component {
             }
         })
             .then(res => res.json())
-            .then(res => this.setState({
-                country: res.country,
-                capital: res.city,
-                allCountries: res.allCountries.countries
-            }))
+            .then(res =>
+                this.setState({
+                    country: res.country,
+                    capital: res.city,
+                    allCountries: res.allCountries.countries
+                }))
 
-        // let guess = res.country
-        // this.setState({
-        //     countriesFiltered: countriesFiltered.push(guess)
-        // })
+
+        if (!this.state.countriesFiltered.includes(this.state.country)) {
+            return this.state.countriesFiltered.push(this.state.country)
+        } else {
+            console.log("that country already is shown")
+            console.log(this.state.country)
+            //below breaks the 
+
+
+        }
     }
 
     componentDidMount() {
-        this.setState({
-            correct: false,
-            country: '',
-            capital: '',
-            allCountries: []
-        })
         this.getData()
-        //this.shuffle()
     }
 
     shuffle = () => {
